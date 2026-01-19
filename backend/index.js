@@ -16,12 +16,18 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "http://https://taskmanagement-3tqy.onrender.com/:5173", // React deployed server
-    credentials: true, 
-  })
-);
+
+const allowedOrigins = [
+  'http://localhost:5173',                // local dev
+  'http://localhost:5174',                // another local dev port
+  'https://taskmanagement-3tqy.onrender.com' // deployed frontend
+];
+app.use(cors({
+  origin:  'https://taskmanagement-3tqy.onrender.com',
+  credentials: true
+}));
+
+
 
 
 
