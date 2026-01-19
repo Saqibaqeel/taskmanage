@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173", // React dev server
-    credentials: true, // Allow cookies to be sent
+    origin: "http://https://taskmanagement-3tqy.onrender.com/:5173", // React deployed server
+    credentials: true, 
   })
 );
 
